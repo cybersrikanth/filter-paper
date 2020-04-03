@@ -1,4 +1,4 @@
-exports.filter=(obj)=>{
+exports.filterPaper=(obj)=>{
     try {
         const arr = Object.keys(obj)
         const result = {isValid:true, err:{}, data:{}}

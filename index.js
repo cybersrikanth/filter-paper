@@ -5,7 +5,7 @@ const {validateNumberLength} = require('./validators/validateNumberLength')
 const {validateBool} = require('./validators/validateBool')
 const {validateAddress} = require('./validators/validateAddress')
 const {validatePassword} = require('./validators/validatePassword')
-const {filter} = require('./filter')
+const {filterPaper} = require('./filterPaper')
 
 exports.validateEmail = validateEmail;
 exports.validateString = validateString;
@@ -14,4 +14,4 @@ exports.validateText = validateText;
 exports.validateNumberLength = validateNumberLength;
 exports.validateBool = validateBool;
 exports.validateAddress = validateAddress;
-exports.filter = filter
+exports.filterPaper = filterPaper
