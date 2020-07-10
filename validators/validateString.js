@@ -8,7 +8,7 @@ exports.validateString = ({
 }
   ) => {
       try {  
-          if(!value) throw TypeError
+          if(value == undefined || value == null) throw TypeError
           value = String(value).trim()
         const numeric = /^[0-9]*$/;
         const alpha = /^[a-zA-Z]*$/;
