@@ -1,6 +1,6 @@
 {
-  "name": "filter-paper",
-  "version": "1.0.43",
+  "name": "@cybersrikanth/filter-paper",
+  "version": "1.0.44",
   "description": "simple and tiny validator ",
   "main": "index.js",
   "scripts": {
