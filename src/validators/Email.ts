@@ -1,13 +1,14 @@
 import Validator from "./Validator";
 import EmailModel from "../models/Email";
 import { errorResponse } from "../response/error";
+import { returnType } from "../models/type";
 
 export default class Email extends Validator implements EmailModel {
     constructor(public text: any) {
         super(text);
     }
 
-    sanitize() {
+    sanitize(): any {
         const sanitizedEmail = this.text.toString().trim().toLowerCase();
         this.text = sanitizedEmail;
         return this;
@@ -23,7 +24,7 @@ export default class Email extends Validator implements EmailModel {
         return this;
     }
 
-    get email() {
+    get email(): String {
         return this.text;
     }
 }

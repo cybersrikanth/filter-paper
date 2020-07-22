@@ -1,3 +1,3 @@
-import Email from "./validators/Email";
+// import Email from "./validators/Email";
 
-module.exports = { Email }
+// module.exports = { Email }
