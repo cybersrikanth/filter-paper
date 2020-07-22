@@ -1,3 +1,10 @@
-import Validator from "./validators/Validator";
+import Email from "./validators/Email";
 
-export default Validator;
+const email = new Email("Test@test.com");
+
+try {
+    const result = email.isEmail().email;
+    console.log(result)
+} catch (error) {
+    console.log(error)
+}
