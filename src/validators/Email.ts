@@ -1,7 +1,6 @@
 import Validator from "./Validator";
 import EmailModel from "../models/Email";
 import { errorResponse } from "../response/error";
-import { returnType } from "../models/type";
 
 export default class Email extends Validator implements EmailModel {
     constructor(public text: any) {
