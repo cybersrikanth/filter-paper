@@ -4,7 +4,13 @@ import { errorResponse } from "../response/error";
 
 export default class Email extends Validator implements EmailModel {
     constructor(public text: any) {
-        super(text.toLowerCase().trim());
+        super(text);
+    }
+
+    sanitize() {
+        const sanitizedEmail = this.text.toString().trim().toLowerCase();
+        this.text = sanitizedEmail;
+        return this;
     }
 
     isEmail(

@@ -5,40 +5,41 @@ class Validator {
     constructor(text) {
         this.text = text;
     }
-    isLength(length) {
+    isLength(length, message) {
         if (this.text.toString().length !== length) {
-            throw error_1.errorResponse(`entered data does not match the given length ${length}`);
+            throw error_1.errorResponse(message ||
+                `entered data does not match the given length ${length}`);
         }
         return this;
     }
-    max(limit) {
+    max(limit, message) {
         if (this.text.toString().length > limit) {
-            throw error_1.errorResponse(`enter the data less than ${limit + 1}`);
+            throw error_1.errorResponse(message || `enter the data less than ${limit + 1}`);
         }
         return this;
     }
-    min(limit) {
+    min(limit, message) {
         if (this.text.toString().length < limit) {
-            throw error_1.errorResponse(`enter the data more than ${limit}`);
+            throw error_1.errorResponse(message || `enter the data more than ${limit}`);
         }
         return this;
     }
-    isNumber() {
+    isNumber(message) {
         if (isNaN(this.text)) {
-            throw error_1.errorResponse(`enter a valid number`);
+            throw error_1.errorResponse(message || `enter a valid number`);
         }
         return this;
     }
-    isAlpha() {
+    isAlpha(message) {
         const pattern = /^[A-Za-z]+$/;
         if (!this.text.toString().match(pattern)) {
-            throw error_1.errorResponse(`enter alphabets only`);
+            throw error_1.errorResponse(message || `enter alphabets only`);
         }
         return this;
     }
-    isEmpty() {
+    isEmpty(message) {
         if (this.text.toString().length === 0) {
-            throw error_1.errorResponse(`this feild is empty`);
+            throw error_1.errorResponse(message || `this feild is empty`);
         }
         return this;
     }
