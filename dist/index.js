@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Email_1 = __importDefault(require("./validators/Email"));
-const email = new Email_1.default("Test@test.com");
+const Password_1 = __importDefault(require("./validators/Password"));
+// module.exports = { Email }
 try {
-    const result = email.sanitize();
-    console.log(result);
+    const password = new Password_1.default("Devbro123!@#").isPassword();
+    console.log(password);
 }
 catch (error) {
     console.log(error);
