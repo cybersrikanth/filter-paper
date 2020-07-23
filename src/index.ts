@@ -1,3 +1,4 @@
 import Email from "./validators/Email";
+import Password from "./validators/Password";
 
-module.exports = { Email }
+module.exports = { Email, Password };

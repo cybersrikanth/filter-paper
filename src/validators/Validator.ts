@@ -4,7 +4,7 @@ import { errorResponse } from "../response/error";
 export default class Validator implements Validation {
     constructor(public text: any) {}
 
-    isLength(length: number, message?: String): this {
+    isLength(length: number, message?: String): any {
         if (this.text.toString().length !== length) {
             throw errorResponse(
                 message ||
@@ -14,7 +14,7 @@ export default class Validator implements Validation {
         return this;
     }
 
-    max(limit: number, message?: String): this {
+    max(limit: number, message?: String): any {
         if (this.text.toString().length > limit) {
             throw errorResponse(
                 message || `enter the data less than ${limit + 1}`
@@ -23,21 +23,21 @@ export default class Validator implements Validation {
         return this;
     }
 
-    min(limit: number, message?: String) {
+    min(limit: number, message?: String): any {
         if (this.text.toString().length < limit) {
             throw errorResponse(message || `enter the data more than ${limit}`);
         }
         return this;
     }
 
-    isNumber(message?: String) {
+    isNumber(message?: String): any {
         if (isNaN(this.text)) {
             throw errorResponse(message || `enter a valid number`);
         }
         return this;
     }
 
-    isAlpha(message?: String) {
+    isAlpha(message?: String): any {
         const pattern = /^[A-Za-z]+$/;
         if (!this.text.toString().match(pattern)) {
             throw errorResponse(message || `enter alphabets only`);
@@ -45,7 +45,7 @@ export default class Validator implements Validation {
         return this;
     }
 
-    isEmpty(message?: String) {
+    isEmpty(message?: String): any {
         if (this.text.toString().length === 0) {
             throw errorResponse(message || `this feild is empty`);
         }
